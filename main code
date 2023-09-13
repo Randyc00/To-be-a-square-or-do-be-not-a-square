@@ -1,0 +1,37 @@
+class Shape:
+  def calc_area(self):
+    pass
+class Square(Shape):
+  def __init__(self, sidelength):
+    self.sidelength = sidelength
+  def cal_area(self):
+    return (self.sidelength * self.sidelength)
+  def isasquare(self):
+      return True
+
+class Rectangle(Shape):
+  def __init__(self, length, width):
+      self.length = length
+      self.width = width
+  def cal_area (self):
+      return self.length * self.width
+  def isasquare(self):
+    return self.length == self.width
+
+length = float(input("Enter your length: "))
+width = float(input("Enter your width: "))
+
+if length == width:
+    shape = Square(length)
+else:
+    shape = Rectangle(length, width)
+    shape1 = ("Square")
+
+if shape.isasquare():
+    area = shape.cal_area()
+    print (f"The area is: {area}")
+    print ("This is: square")
+else:
+    area = shape.cal_area()
+    print(f"The area is : {area}")
+    print("This is not: square")
